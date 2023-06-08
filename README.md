@@ -18,15 +18,15 @@ A Chatting app build on React and Redux with socket.io for real time chatting as
 ### CHAT  ENDPOINTS
 
 1- Get current user All Chats      GET   http://localhost:5000/api/chats
-2- Delete Chat by id     GET   http://localhost:5000/chats/api/chatId
+2- Delete Chat by id     GET   http://localhost:5000/chats/api/{chatId}
 3- Create new chat        POST  http://localhost:5000/api/chats
 
 
 ###  MESSAGES ENDPOINTS
 
 
-1- Get all chat messages    GET   http://localhost:5000/api/chats/:chatId/messages
-2- Create new message in chat     POST  http://localhost:5000/api/chats/:chatId/messages
+1- Get all chat messages    GET   http://localhost:5000/api/chats/{chatId}/messages
+2- Create new message in chat     POST  http://localhost:5000/api/chats/{chatId}/messages
 
 
 
