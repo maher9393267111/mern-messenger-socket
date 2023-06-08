@@ -6,13 +6,14 @@ A Chatting app build on React and Redux with socket.io for real time chatting as
 
 ### USER ENDPOINTS
 
-1- Register new user   POST http://localhost:5000/Users  
-2- Login user         POST http://localhost:5000/Tokens
-3- Current user  GET  http://localhost:5000/user/{username}
-4- user by name find    GET  http://localhost:5000/auth/users/:userName
-5-  search user by name or gmail   GET  http://localhost:5000/api/?search={search}
+1- Register new user   POST   http://localhost:5000/Users  
+2- Login user         POST   http://localhost:5000/Tokens
+3- Current user  GET   http://localhost:5000/api/Users/{username}
+
+4-  search user by username   GET  http://localhost:5000/api/?search={search}
 
 
+<!-- 5- user by name find    GET  http://localhost:5000/auth/users/:userName -->
 
 ### CHAT  ENDPOINTS
 
