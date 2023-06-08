@@ -1,6 +1,7 @@
 # Messanger
 A Chatting app build on React and Redux with socket.io for real time chatting as MERN project you can make a Login and sigup authenicate with bcrypt and json web token live socket single chat group chat sending notification , profile upload and awesome UI/UX storing the chat on mongoDB complete schema using Mongoose
 
+# mern-messenger-socket
 
 ## ENDPOINTS 
 
@@ -28,9 +29,8 @@ A Chatting app build on React and Redux with socket.io for real time chatting as
 2- Create new message in chat     POST  http://localhost:5000/api/chats/:chatId/messages
 
 
-# mern-messenger-socket
-# mern-messenger-socket
-# mern-messenger-socket
+
+
 
 
 
