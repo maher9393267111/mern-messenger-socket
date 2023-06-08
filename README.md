@@ -31,3 +31,17 @@ A Chatting app build on React and Redux with socket.io for real time chatting as
 # mern-messenger-socket
 # mern-messenger-socket
 # mern-messenger-socket
+
+
+
+
+##  Server work   
+
+ cd /Server
+ npm run dev
+
+
+ ##  Client work
+
+ cd Client
+ npm run dev
