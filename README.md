@@ -38,11 +38,11 @@ A Chatting app build on React and Redux with socket.io for real time chatting as
 
 ##  Server work   
 
- cd /Server
- npm run dev
+ #cd /Server
+ #npm run dev
 
 
  ##  Client work
 
- cd Client
- npm run dev
+ #cd Client
+ #npm run dev
