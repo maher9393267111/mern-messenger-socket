@@ -78,3 +78,31 @@ display: inline-flex;
     padding: 12px;
     background-color: rgb(88, 101, 242);
 }
+
+
+.my_chat_header{
+
+  margin-left: 17px;
+  margin-right: 17px;
+  margin-bottom: 17px;
+cursor: pointer;
+background-color: aqua;
+padding: 10px;
+border-radius: 3%;
+
+}
+
+
+
+.contacts_header{
+  margin-left: 17px;
+  margin-right: 17px;
+  margin-bottom: 17px;
+cursor: pointer;
+background-color: black;
+color: white;
+padding: 10px;
+border-radius: 3%;
+
+
+}

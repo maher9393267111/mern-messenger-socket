@@ -34,7 +34,33 @@ export const makeSearchName = (userName) => async (dispatch) => {
   const user = JSON.parse(localStorage.getItem("userInfo")) || {};
   //${userName}
   //?search=${search}
-  const url = `http://localhost:5000/api?search=${userName}`;
+  const url = `http://localhost:5000/api?search=${userName}}`;
+  try {
+    let res = await fetch(url, {
+      method: "get",
+      headers: {
+        "content-type": "application/json",
+        Authorization: `Bearer ${user.token}`,
+      },
+    });
+    let data = await res.json();
+    dispatch(searchResult(data));
+  } catch (err) {
+    dispatch(searchError(true));
+    console.log(err.message);
+  }
+};
+
+
+
+
+
+export const Allusers = () => async (dispatch) => {
+  searhcLoding(true);
+  const user = JSON.parse(localStorage.getItem("userInfo")) || {};
+  //${userName}
+  //?search=${search}
+  const url = `http://localhost:5000/api`;
   try {
     let res = await fetch(url, {
       method: "get",

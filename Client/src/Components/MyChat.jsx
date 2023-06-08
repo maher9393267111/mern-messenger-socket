@@ -5,7 +5,7 @@ import Popover from "@mui/material/Popover";
 import Typography from "@mui/material/Typography";
 import { Avatar, Badge } from "@mui/material";
 import { useDispatch } from "react-redux";
-import { makeSearchApi ,   makeSearchName } from "./Redux/Searching/action";
+import { makeSearchApi ,   makeSearchName ,Allusers } from "./Redux/Searching/action";
 import { useSelector } from "react-redux";
 import { accessChat, makeRecentChatApi } from "./Redux/RecentChat/action";
 import { selectChat } from "./Redux/Chatting/action";
@@ -27,7 +27,13 @@ export const MyChat = () => {
 
   useEffect(() => {
     console.log("TOKEN_____" ,token)
-    if (token) dispatch(makeRecentChatApi(token));
+
+    if (token) {
+      dispatch(Allusers());
+      dispatch(makeRecentChatApi(token));
+    
+    
+    }
   }, [user]);
   const ref = useRef();
   const handleQuery = (e) => {
@@ -50,8 +56,8 @@ export const MyChat = () => {
   return (
     <div className="mychat-cont">
       <div>
-        <div className="notification">
-          <h2>Chats</h2>
+        <div className="notification my-2">
+          <h2>MESSENGER</h2>
           {/* <NotificationsIcon /> */}
           {/* <Badge badgeContent={notification} color="error">
             <Notificationcomp />
@@ -61,20 +67,51 @@ export const MyChat = () => {
 
           {/* <AddIcon /> */}
         </div>
-        <div className="search-cont">
+        {/* <div className="search-cont">
           <SearchIcon />
           <input
             onChange={handleQuery()}
             type="text"
             placeholder="Search users"
           />
-        </div>
+        </div> */}
+
+
+<div>
+
+<div><h3 className="my_chat_header">My Chats</h3></div>
+
+
+
+            {   recent_chat?.map((el, index) => (
+                 <ChatUserComp
+                   key={el._id}
+                   {...el}
+                   index={index}
+                   chattingwith={chatting._id}
+                   id={user._id}
+                />
+               ))} 
+
+
+
+
+</div>
+
+
+
+
+
+
+
       </div>
       <div className="recent-chat">
-        <p className="Recent">Recent</p>
+        <h3 className="Recent contacts_header">All  Contacts</h3>
         <div className="recent-user">
-          {search
-            ? search_result?.map((el) => (
+          {/* {search */}
+            {/* ? */}
+            
+           {  search_result?.map((el) => (
                 <SearchUserComp
                   key={el._id}
                   {...el}
@@ -83,17 +120,20 @@ export const MyChat = () => {
                   setSearch={setSearch}
                 />
               ))
-            : !chat_loading &&
-              recent_chat?.map((el, index) => (
-                <ChatUserComp
-                  key={el._id}
-                  {...el}
-                  index={index}
-                  chattingwith={chatting._id}
-                  id={user._id}
-                />
-              ))}
+
+           }
+
+
+         
         </div>
+
+
+
+
+
+
+
+
       </div>
     </div>
   );

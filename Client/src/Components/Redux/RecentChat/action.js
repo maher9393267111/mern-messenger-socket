@@ -33,25 +33,25 @@ export const makeRecentChatApi = (token) => async (dispatch) => {
   }
 };
 
-export const makeNewGroup = (group_data, token) => async (dispatch) => {
-  recentLoding(true);
-  const url = `http://localhost:5000/api/chats/group`;
-  try {
-    let res = await fetch(url, {
-      method: "post",
-      body: JSON.stringify(group_data),
-      headers: {
-        "content-type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    let data = await res.json();
-    dispatch(newCreatedChat(data));
-  } catch (err) {
-    dispatch(recentError(true));
-    console.log(err.message);
-  }
-};
+// export const makeNewGroup = (group_data, token) => async (dispatch) => {
+//   recentLoding(true);
+//   const url = `http://localhost:5000/api/chats/group`;
+//   try {
+//     let res = await fetch(url, {
+//       method: "post",
+//       body: JSON.stringify(group_data),
+//       headers: {
+//         "content-type": "application/json",
+//         Authorization: `Bearer ${token}`,
+//       },
+//     });
+//     let data = await res.json();
+//     dispatch(newCreatedChat(data));
+//   } catch (err) {
+//     dispatch(recentError(true));
+//     console.log(err.message);
+//   }
+// };
 
 
 
