@@ -1,3 +1,4 @@
+
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import SearchIcon from "@mui/icons-material/Search";
 import React, { useEffect, useRef, useState } from "react";
@@ -58,23 +59,9 @@ export const MyChat = () => {
       <div>
         <div className="notification my-2">
           <h2>MESSENGER</h2>
-          {/* <NotificationsIcon /> */}
-          {/* <Badge badgeContent={notification} color="error">
-            <Notificationcomp />
-          </Badge> */}
-
-
-
-          {/* <AddIcon /> */}
+     
         </div>
-        {/* <div className="search-cont">
-          <SearchIcon />
-          <input
-            onChange={handleQuery()}
-            type="text"
-            placeholder="Search users"
-          />
-        </div> */}
+  
 
 
 <div>
@@ -237,3 +224,12 @@ export const SearchUserComp = ({
     </div>
   );
 };
+
+
+
+
+
+
+
+
+

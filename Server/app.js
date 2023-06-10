@@ -3,6 +3,7 @@ const cors = require("cors");
 const express = require("express");
 const socket = require("socket.io");
 const morgan = require("morgan");
+const path = require("path");
  //const { Server } = require("socket.io");
 const app = express();
 app.use(cors());
@@ -15,6 +16,15 @@ const chatsController = require("./controller/chats");
 
 app.use("/api/", userController);
 app.use("/api/chats/", chatsController);
+
+
+
+app.use(express.static(path.join(__dirname, "../Client/dist")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../Client/dist/index.html"));
+});
+
 
 //app.use("/message", messageController);
 

@@ -26,6 +26,8 @@ export const makeRecentChatApi = (token) => async (dispatch) => {
       },
     });
     let data = await res.json();
+
+    // fetch curentUser All chats 
     dispatch(recentChatResult(data));
   } catch (err) {
     dispatch(recentError(true));
@@ -75,7 +77,7 @@ export const accessChat = (userId, token, recentchat) => async (dispatch) => {
       dispatch(newCreatedChat(data));
       dispatch(
         selectChat({
-          //isGroupChat: data.isGroupChat,
+         
           index: 0,
           user: data.users.find((el) => el._id == userId),
           _id: data._id,
@@ -87,7 +89,7 @@ export const accessChat = (userId, token, recentchat) => async (dispatch) => {
     dispatch(recentLoding(false));
     dispatch(
       selectChat({
-       // isGroupChat: data.isGroupChat,
+       
         index: 0,
         user: data.users.find((el) => el._id == userId),
         _id: data._id,

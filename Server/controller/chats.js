@@ -86,7 +86,7 @@ router.post("/", authenticate, async (req, res) => {
   try {
     const { userId } = req.body;
     let chat = await Chat.find({
-      isGroupChat: false,
+    //  isGroupChat: false,
       $and: [
         {
           users: { $elemMatch: { $eq: req.user._id } },
